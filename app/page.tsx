@@ -221,7 +221,7 @@ export default function Home() {
       <div>
         <h3 className="text-xl font-semibold mb-4 text-center">無料相談</h3>
         <iframe
-          src="https://tally.so/r/xxxxx" // ← 実際の無料相談フォームURL
+          src="https://tally.so/r/mDWybR" // ← 実際の無料相談フォームURL
           width="100%"
           height="600"
           frameBorder="0"
@@ -231,7 +231,7 @@ export default function Home() {
       <div>
         <h3 className="text-xl font-semibold mb-4 text-center">資料請求</h3>
         <iframe
-          src="https://tally.so/r/yyyyy" // ← 実際の資料請求フォームURL
+          src="https://tally.so/r/3jE2px" // ← 実際の資料請求フォームURL
           width="100%"
           height="600"
           frameBorder="0"
