@@ -213,6 +213,36 @@ export default function Home() {
         </div>
       </section>
 
+{/* CTA フォーム埋め込みセクション */}
+<section className="py-16 bg-white">
+  <div className="container mx-auto px-4 md:px-6">
+    <h2 className="text-3xl font-bold text-center mb-12">無料相談・資料請求フォーム</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 className="text-xl font-semibold mb-4 text-center">無料相談</h3>
+        <iframe
+          src="https://tally.so/r/xxxxx" // ← 実際の無料相談フォームURL
+          width="100%"
+          height="600"
+          frameBorder="0"
+          title="無料相談フォーム"
+        ></iframe>
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold mb-4 text-center">資料請求</h3>
+        <iframe
+          src="https://tally.so/r/yyyyy" // ← 実際の資料請求フォームURL
+          width="100%"
+          height="600"
+          frameBorder="0"
+          title="資料請求フォーム"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Use Cases */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
