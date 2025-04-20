@@ -5,11 +5,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 const plans = [
   {
     name: "スターター",
-    price: "¥10,000",
-    description: "月1回MTG＋チャット相談＋今だけ1業務自動化つき",
+    price: "¥1万円",
+    description: "月1回MTG",
     features: [
-      "月1回のオンラインミーティング",
-      "チャットでの相談サポート",
+      "月1回のミーティング",
       "1つの業務フローの自動化",
       "基本的なAI機能",
       "メールサポート",
@@ -19,12 +18,11 @@ const plans = [
   },
   {
     name: "スタンダード",
-    price: "¥97,000",
+    price: "¥9.7万円",
     description: "月1回MTG＋作業10時間",
     features: [
-      "月1回のオンラインミーティング",
+      "月1回のミーティング",
       "10時間の作業時間",
-      "3つまでの業務フローの自動化",
       "高度なAI機能",
       "優先サポート（平日12時間）",
       "月次レポート",
@@ -34,16 +32,13 @@ const plans = [
   },
   {
     name: "プレミア",
-    price: "¥198,000",
+    price: "¥19.8万円",
     description: "月2回MTG＋作業20時間＋社内勉強会",
     features: [
-      "月2回のオンラインミーティング",
+      "月2回のミーティング",
       "20時間の作業時間",
-      "無制限の業務フロー自動化",
       "高度なAI機能",
-      "優先サポート（24時間）",
       "社内向け勉強会の実施",
-      "経営層向けレポート",
     ],
     cta: "無料相談を予約",
     popular: false,
@@ -51,14 +46,11 @@ const plans = [
   {
     name: "カスタム",
     price: "応相談",
-    description: "生成AI・チャットボットなど",
+    description: "AIチャットボット、複雑なシステムなど",
     features: [
       "カスタムAI開発",
       "専任コンサルタント",
       "オーダーメイドソリューション",
-      "24時間サポート",
-      "定期的な改善ワークショップ",
-      "経営層向けレポート",
     ],
     cta: "詳細を問い合わせ",
     popular: false,
@@ -82,14 +74,17 @@ export default function Pricing() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute -right-12 top-7 w-36 rotate-45 bg-blue-600 py-1 text-center text-sm font-medium text-white">
-                  人気
+                <div className="absolute -right-12 top-7 w-36 -rotate-45 bg-blue-600 py-1 text-center text-sm font-medium text-white">
+                  おすすめ
                 </div>
               )}
               <CardHeader>
                 <CardTitle className="text-xl">{plan.name}</CardTitle>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold tracking-tight text-gray-900">{plan.price}</span>
+                  <span className="text-3xl font-bold">
+                  {plan.price}／月
+                  <span className="text-sm">（税込）</span>
+                  </span>
                 </div>
                 <CardDescription className="mt-1">{plan.description}</CardDescription>
               </CardHeader>
