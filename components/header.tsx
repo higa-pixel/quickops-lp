@@ -40,7 +40,7 @@ export default function Header() {
           <Link href="#faq" className="text-sm font-medium text-gray-600 hover:text-blue-600">
             よくある質問
           </Link>
-          <Link href="/downloads/quickops-service-document.pdf">
+          <Link href="/downloads/quickops-guide.pdf">
             <Button size="sm" variant="outline" className="ml-4">
               資料ダウンロード
             </Button>

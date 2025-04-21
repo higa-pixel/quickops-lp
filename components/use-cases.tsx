@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, Mail, BookOpen, BarChart2, Calendar, ClipboardList, FileCheck, Bell, Target, ArrowRight } from "lucide-react"
 
@@ -124,30 +126,35 @@ export default function UseCases() {
         
         {/* もっと見るボタン */}
         <div className="mt-10 text-center">
-          <button 
-            className="flex items-center mx-auto space-x-2 text-blue-600 hover:text-blue-800 focus:outline-none"
-            onClick={() => {
-              const moreContent = document.getElementById('more-cases');
-              const button = event.currentTarget;
-              if (moreContent.classList.contains('hidden')) {
-                moreContent.classList.remove('hidden');
-                button.innerHTML = '閉じる <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
-              } else {
-                moreContent.classList.add('hidden');
-                button.innerHTML = 'もっと見る <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
-              }
-            }}
-          >
-            もっと見る <ArrowRight className="h-5 w-5 ml-1" />
-          </button>
-        </div>
+  <button 
+    className="flex items-center mx-auto space-x-2 text-blue-600 hover:text-blue-800 focus:outline-none"
+    onClick={() => {
+      // クライアントサイドの処理
+      const moreContent = document.getElementById('more-cases');
+      if (moreContent) {
+        const isHidden = moreContent.classList.contains('hidden');
+        if (isHidden) {
+          moreContent.classList.remove('hidden');
+          // ボタンテキストを変更
+        } else {
+          moreContent.classList.add('hidden');
+          // ボタンテキストを変更
+        }
+      }
+    }}
+  >
+    もっと見る <ArrowRight className="h-5 w-5 ml-1" />
+  </button>
+</div>
         
         {/* CTAセクション */}
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold mb-4">あなたの業務にも自動化できる部分があるかもしれません</h3>
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            無料相談を予約する
-          </button>
+          <Link href="/contact">
+            <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              無料相談を予約する
+            </button>
+          </Link>
         </div>
       </div>
     </section>

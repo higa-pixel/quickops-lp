@@ -101,7 +101,11 @@ export default function Pricing() {
                 )}
               </CardContent>
               <CardFooter>
-                <Button className={`w-full ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : ""}`}>{plan.cta}</Button>
+                <Link href={plan.name === "カスタム" ? "/contact?plan=custom" : "/contact"}>
+                  <Button className={`w-full ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : ""}`}>
+                    {plan.cta}
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
