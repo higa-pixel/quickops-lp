@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image" // 追加：Imageコンポーネントをインポート
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -40,10 +40,14 @@ export default function Header() {
           <Link href="#faq" className="text-sm font-medium text-gray-600 hover:text-blue-600">
             よくある質問
           </Link>
-          <Button size="sm" variant="outline" className="ml-4">
-            資料ダウンロード
-          </Button>
-          <Button size="sm">無料相談を予約</Button>
+          <Link href="/downloads/quickops-service-document.pdf">
+            <Button size="sm" variant="outline" className="ml-4">
+              資料ダウンロード
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button size="sm">無料相談を予約</Button>
+          </Link>
         </nav>
 
         {/* モバイルメニューボタン */}
@@ -99,10 +103,14 @@ export default function Header() {
               よくある質問
             </Link>
             <div className="mt-4 flex flex-col space-y-2">
-              <Button variant="outline" className="w-full justify-center">
-                資料ダウンロード
-              </Button>
-              <Button className="w-full justify-center">無料相談を予約</Button>
+              <Link href="/downloads/quickops-service-document.pdf" className="w-full">
+                <Button variant="outline" className="w-full justify-center">
+                  資料ダウンロード
+                </Button>
+              </Link>
+              <Link href="/contact" className="w-full">
+                <Button className="w-full justify-center">無料相談を予約</Button>
+              </Link>
             </div>
           </div>
         </div>
