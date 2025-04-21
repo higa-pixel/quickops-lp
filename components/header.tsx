@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image" // 追加：Imageコンポーネントをインポート
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -13,7 +14,12 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-blue-600">QuickOps</span>
+            <Image 
+              src="/placeholder-logo.png" 
+              alt="QuickOps" 
+              width={120} 
+              height={40} 
+            />
           </Link>
         </div>
 
