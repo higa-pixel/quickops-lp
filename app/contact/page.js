@@ -16,7 +16,7 @@ export default function ContactForm() {
     honeypot: '',       // スパム対策用の隠しフィールド
     subject: 'QuickOpsお問い合わせ', // メールの件名
     replyTo: '@',       // 自動返信の設定
-    accessKey: 'sf_fkjg254jnn3ldea115bh9gl6', // Static Formsのアクセスキー
+    accessKey: process.env.NEXT_PUBLIC_STATIC_FORMS_ACCESS_KEY, // Static Formsのアクセスキー
   });
   
   // プライバシーポリシー同意チェック

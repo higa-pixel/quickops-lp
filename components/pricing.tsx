@@ -1,56 +1,43 @@
-import { Check } from "lucide-react"
+import { Check, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const plans = [
   {
-    name: "スターター",
+    name: "スタータープラン",
     price: "¥1万円",
-    description: "月1回MTG",
+    description: "「何から始めるか分からない」企業向け",
     features: [
-      "月1回のミーティング",
-      "1つの業務フローの自動化",
-      "基本的なAI機能",
-      "メールサポート",
+      "月1回の面談 または 社内勉強会",
+      "チャット・メール相談",
+      "まず相談してみたい方にぴったり",
     ],
+    specialOffer: "1業務の自動化付き",
     cta: "無料相談を予約",
     popular: false,
   },
   {
-    name: "スタンダード",
-    price: "¥9.7万円",
-    description: "月1回MTG＋作業10時間",
+    name: "スタンダードプラン",
+    price: "¥5万円",
+    description: "仕組み化を継続したい中小企業向け",
     features: [
-      "月1回のミーティング",
-      "10時間の作業時間",
-      "高度なAI機能",
-      "優先サポート（平日12時間）",
-      "月次レポート",
+      "月2回の面談 または 社内勉強会",
+      "チャット・メール相談",
+      "毎月2業務の自動化（ノーコード中心）",
+      "社内に定着する改善サイクルを実現",
     ],
     cta: "無料相談を予約",
     popular: true,
   },
   {
-    name: "プレミア",
-    price: "¥19.8万円",
-    description: "月2回MTG＋作業20時間＋社内勉強会",
-    features: [
-      "月2回のミーティング",
-      "20時間の作業時間",
-      "高度なAI機能",
-      "社内向け勉強会の実施",
-    ],
-    cta: "無料相談を予約",
-    popular: false,
-  },
-  {
     name: "カスタム",
     price: "応相談",
-    description: "AIチャットボット、複雑なシステムなど",
+    description: "AI応用導入や全社DXを進めたい企業向け",
     features: [
-      "カスタムAI開発",
-      "専任コンサルタント",
-      "オーダーメイドソリューション",
+      "複合的な業務プロセス自動化",
+      "ChatGPT・生成AIの応用構築",
+      "経営層や社員向けのAI・ITリテラシー研修",
+      "社内ポータル・ナレッジ基盤の開発支援",
     ],
     cta: "詳細を問い合わせ",
     popular: false,
@@ -65,7 +52,7 @@ export default function Pricing() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">シンプルな料金体系</h2>
           <p className="mt-4 text-lg text-gray-600">ビジネスの規模や自動化したい業務に合わせて選べる料金プラン</p>
         </div>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <Card
               key={plan.name}
@@ -99,6 +86,19 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
+                
+                {plan.specialOffer && (
+                  <div className="mt-5 mb-5 p-3 bg-blue-50 rounded-md border border-blue-100">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 text-blue-600">
+                        <Lightbulb className="h-5 w-5" />
+                      </div>
+                      <p className="ml-2 text-sm font-bold text-blue-600">
+                        ✅【期間限定特典】{plan.specialOffer}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </CardContent>
               <CardFooter>
                 <Button className={`w-full ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : ""}`}>{plan.cta}</Button>
@@ -106,11 +106,11 @@ export default function Pricing() {
             </Card>
           ))}
         </div>
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-gray-600">
             すべてのプランには初期設定費用が含まれています。カスタムプランについてはお問い合わせください。
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   )

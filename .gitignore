@@ -25,3 +25,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# static forms
+.env.local
+
+# .gitignore に追加する例
+old_page.js
+*.bak
+*.old

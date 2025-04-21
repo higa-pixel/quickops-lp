@@ -82,14 +82,14 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between md:flex-row">
             <p className="text-sm">&copy; {new Date().getFullYear()} QuickOps. All rights reserved.</p>
             <div className="mt-4 flex space-x-6 md:mt-0">
-              <Link href="#" className="text-sm hover:text-blue-400">
+              <Link href="/policy" className="text-sm hover:text-blue-400">
                 プライバシーポリシー
               </Link>
-              <Link href="#" className="text-sm hover:text-blue-400">
+              {/* <Link href="/terms" className="text-sm hover:text-blue-400">
                 利用規約
-              </Link>
-              <Link href="https://example.com" className="text-sm hover:text-blue-400">
-                運営会社
+              </Link> */}
+              <Link href="/contact" className="text-sm hover:text-blue-400">
+                お問い合わせ
               </Link>
             </div>
           </div>
