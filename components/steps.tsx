@@ -2,24 +2,24 @@ import { CheckCircle2 } from "lucide-react"
 
 const steps = [
   {
-    day: "Day 0",
+    day: "Step 1",
     title: "無料相談",
-    description: "お客様の課題や自動化したい業務についてヒアリングします。オンラインで30分程度です。",
+    description: "お客様の課題や自動化したい業務についてヒアリングします。オンラインで30分程度の気軽な相談から始めましょう。",
   },
   {
-    day: "Day 1",
-    title: "要件定義",
-    description: "自動化する業務の詳細な要件を定義し、最適なソリューションを設計します。",
+    day: "Step 2",
+    title: "プラン選定",
+    description: "ヒアリング内容をもとに、最適なプランをご提案します。目的や予算に合わせてカスタマイズすることも可能です。",
   },
   {
-    day: "Day 2",
-    title: "実装・テスト",
-    description: "設計に基づいて自動化の仕組みを実装し、テストを行います。",
+    day: "Step 3",
+    title: "契約・初期設定",
+    description: "ご契約後、すぐに初期設定を行います。アカウント発行やツール連携など、専任スタッフがサポートします。",
   },
   {
-    day: "Day 3",
-    title: "導入・運用開始",
-    description: "完成した自動化の仕組みを導入し、運用を開始します。必要に応じてトレーニングも実施します。",
+    day: "Step 4",
+    title: "サービス開始",
+    description: "定期的な面談やチャットサポートを通じて、継続的に業務改善を進めていきます。毎月の自動化で業務効率化を実現します。",
   },
 ]
 
@@ -28,7 +28,7 @@ export default function Steps() {
     <section id="steps" className="bg-white py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">最短3日で業務自動化</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">サービス導入の流れ</h2>
           <p className="mt-4 text-lg text-gray-600">QuickOpsの導入プロセスはシンプルで迅速です</p>
         </div>
         <div className="mt-16 mx-auto max-w-4xl">
