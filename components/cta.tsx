@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -15,13 +16,17 @@ export default function CTA() {
             まずは無料相談で、どんな業務が自動化できるかご相談ください。
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <Button size="lg" className="bg-white px-8 text-blue-600 hover:bg-blue-50">
-              無料相談を予約する
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-blue-200 px-8 text-white hover:bg-blue-700">
-              資料をダウンロードする
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-white px-8 text-blue-600 hover:bg-blue-50 shadow-md">
+                無料相談を予約する
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/download">
+              <Button size="lg" variant="outline" className="border-blue-200 bg-white/10 px-8 text-white hover:bg-blue-700 shadow-md">
+                資料をダウンロードする
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

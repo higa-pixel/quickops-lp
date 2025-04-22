@@ -104,10 +104,15 @@ export default function Pricing() {
                   </div>
                 )}
               </CardContent>
-              // カードフッター部分を修正
               <CardFooter>
-                <Link href={plan.name === "カスタム" ? "/contact?plan=custom" : "/contact"}>
-                  <span className={`inline-block w-full text-center py-2 px-4 rounded-md ${plan.popular ? "bg-blue-600 hover:bg-blue-700 text-white" : "bg-gray-100 hover:bg-gray-200 text-gray-900"}`}>
+                <Link href={plan.name === "カスタム" ? "/contact?plan=custom" : "/contact"} className="w-full">
+                  <span className={`inline-block w-full text-center py-2 px-4 rounded-md ${
+                    plan.popular 
+                      ? "bg-blue-600 hover:bg-blue-700 text-white" 
+                      : plan.name === "カスタム"
+                        ? "bg-gray-100 hover:bg-gray-200 text-gray-900"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-900"
+                  }`}>
                     {plan.cta}
                   </span>
                 </Link>
