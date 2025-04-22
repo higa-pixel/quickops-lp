@@ -56,7 +56,14 @@ export default function Footer() {
         {/* 下部セパレーター */}
         <div className="mt-12 border-t border-gray-800 pt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between">
-            <p className="text-sm">&copy; {new Date().getFullYear()} QuickOps. All rights reserved.</p>
+            <div className="flex flex-col sm:flex-row items-center sm:items-start">
+              <p className="text-sm">&copy; {new Date().getFullYear()} QuickOps. All rights reserved.</p>
+              <div className="mt-1 sm:mt-0 sm:ml-4">
+                <a href="https://klammer.co.jp/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-400 hover:text-blue-300">
+                  運営会社
+                </a>
+              </div>
+            </div>
             <div className="mt-4 sm:mt-0">
               <Link href="/policy" className="text-sm hover:text-blue-400">
                 プライバシーポリシー
