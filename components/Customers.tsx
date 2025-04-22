@@ -1,3 +1,5 @@
+"use client"
+
 export default function Customers() {
     return (
       <section className="bg-gray-50 py-24">
