@@ -1,3 +1,5 @@
+"use client"
+
 import { Check, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -100,11 +102,12 @@ export default function Pricing() {
                   </div>
                 )}
               </CardContent>
+              // カードフッター部分を修正
               <CardFooter>
                 <Link href={plan.name === "カスタム" ? "/contact?plan=custom" : "/contact"}>
-                  <Button className={`w-full ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : ""}`}>
+                  <span className={`inline-block w-full text-center py-2 px-4 rounded-md ${plan.popular ? "bg-blue-600 hover:bg-blue-700 text-white" : "bg-gray-100 hover:bg-gray-200 text-gray-900"}`}>
                     {plan.cta}
-                  </Button>
+                  </span>
                 </Link>
               </CardFooter>
             </Card>
