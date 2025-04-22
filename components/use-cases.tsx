@@ -8,7 +8,9 @@ import {
   FileCheck, 
   BarChart2, 
   Calendar, 
-  ClipboardList 
+  ClipboardList,
+  MessageSquare,
+  Bell
 } from "lucide-react"
 
 export default function UseCases() {
@@ -16,51 +18,66 @@ export default function UseCases() {
   
   const useCases = [
     {
-      icon: <FileText className="w-12 h-12" />,
+      icon: <FileText className="h-5 w-5" />,
       title: "注文書転記の自動化",
       description: "FAX注文をOCRで自動記録",
       detail: "転記の手間とミスを削減",
       industry: "卸売・小売業"
     },
     {
-      icon: <Mail className="w-12 h-12" />,
+      icon: <Mail className="h-5 w-5" />,
       title: "メルマガ配信の自動化",
       description: "投稿内容から文面を自動作成",
       detail: "配信作業ゼロで頻度アップ",
       industry: "マーケティング"
     },
     {
-      icon: <FileCheck className="w-12 h-12" />,
+      icon: <FileCheck className="h-5 w-5" />,
       title: "電子帳簿整理の効率化",
       description: "請求PDFを自動で分類保存",
       detail: "電帳法対応が仕組みで完結",
       industry: "経理・会計"
     },
     {
-      icon: <BarChart2 className="w-12 h-12" />,
+      icon: <BarChart2 className="h-5 w-5" />,
       title: "データ集約作業の自動化",
       description: "複数画面の情報を自動統合",
       detail: "会議資料の作成が不要に",
       industry: "事務・企画"
     },
     {
-      icon: <Calendar className="w-12 h-12" />,
+      icon: <Calendar className="h-5 w-5" />,
       title: "カレンダー通知の自動化",
       description: "登録予定を前日に自動通知",
       detail: "イベント忘れ・漏れを防止",
       industry: "全社共通"
     },
     {
-      icon: <ClipboardList className="w-12 h-12" />,
+      icon: <ClipboardList className="h-5 w-5" />,
       title: "日報集計の自動化",
       description: "入力データを自動で集計",
       detail: "手集計からの解放と可視化",
       industry: "現場業務"
+    },
+    // 画像2の事例も追加
+    {
+      icon: <MessageSquare className="h-5 w-5" />,
+      title: "問い合わせ自動返信",
+      description: "お問い合わせフォームからの質問に対して、AIが自動で適切な返答を作成します。",
+      detail: "",
+      industry: "カスタマーサポート"
+    },
+    {
+      icon: <Bell className="h-5 w-5" />,
+      title: "Slack通知",
+      description: "重要なイベントやデータ更新があった際に、自動でSlackに通知を送信します。",
+      detail: "",
+      industry: "全社共通"
     }
   ]
 
   // 表示するアイテム数を制御
-  const visibleItems = isExpanded ? useCases : useCases.slice(0, 4)
+  const visibleItems = isExpanded ? useCases : useCases.slice(0, 6)
 
   return (
     <section className="py-24 bg-white">
@@ -76,34 +93,29 @@ export default function UseCases() {
           {visibleItems.map((useCase, index) => (
             <div 
               key={index} 
-              className="relative bg-white rounded-lg border border-gray-200 shadow-sm p-6 transition-all duration-300 hover:shadow-md hover:border-blue-300 group"
+              className="flex items-start rounded-lg border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="space-y-4">
-                <div className="p-3 bg-blue-50 rounded-full w-fit">
-                  <div className="text-blue-600">
-                    {useCase.icon}
+              <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                {useCase.icon}
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-gray-900">{useCase.title}</h3>
+                {useCase.detail && (
+                  <p className="mt-1 text-blue-600 font-medium">{useCase.detail}</p>
+                )}
+                <p className="mt-1 text-sm text-gray-600">{useCase.description}</p>
+                {useCase.industry && (
+                  <div className="mt-2 inline-block px-2 py-1 bg-gray-100 rounded-full text-xs text-gray-700">
+                    {useCase.industry}
                   </div>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {useCase.title}
-                </h3>
-                <p className="text-blue-600 font-medium">
-                  {useCase.detail}
-                </p>
-                <p className="text-gray-600">
-                  {useCase.description}
-                </p>
-                <div className="mt-2 inline-block px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">
-                  {useCase.industry}
-                </div>
+                )}
               </div>
             </div>
           ))}
         </div>
         
         {/* もっと見るボタン */}
-        {useCases.length > 4 && (
+        {useCases.length > 6 && (
           <div className="mt-10 text-center">
             <button 
               className="flex items-center mx-auto space-x-2 text-blue-600 hover:text-blue-800 transition-colors focus:outline-none"
