@@ -60,7 +60,7 @@ export default function Pricing() {
           {plans.map((plan) => (
             <Card
               key={plan.name}
-              className={`relative overflow-hidden ${
+              className={`relative overflow-hidden flex flex-col ${
                 plan.popular ? "border-blue-200 shadow-md" : "border-gray-200 shadow-sm"
               }`}
             >
@@ -79,7 +79,7 @@ export default function Pricing() {
                 </div>
                 <CardDescription className="mt-1">{plan.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start">
@@ -104,7 +104,7 @@ export default function Pricing() {
                   </div>
                 )}
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Link href={plan.name === "カスタム" ? "/contact?plan=custom" : "/contact"} className="w-full">
                   <span className={`inline-block w-full text-center py-2 px-4 rounded-md ${
                     plan.popular 
