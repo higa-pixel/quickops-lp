@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="text-lg font-semibold text-white">QuickOps</h3>
             <p className="mt-4 text-sm">AIとノーコードで日常業務を最短3営業日で自動化するサービス</p>
@@ -48,29 +48,13 @@ export default function Footer() {
                   料金プラン
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-white">リソース</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="#" className="text-sm hover:text-blue-400">
-                  ブログ
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm hover:text-blue-400">
-                  お役立ち資料
-                </Link>
-              </li>
               <li>
                 <Link href="#faq" className="text-sm hover:text-blue-400">
                   よくある質問
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-blue-400">
+                <Link href="/contact" className="text-sm hover:text-blue-400">
                   お問い合わせ
                 </Link>
               </li>
@@ -85,9 +69,6 @@ export default function Footer() {
               <Link href="/policy" className="text-sm hover:text-blue-400">
                 プライバシーポリシー
               </Link>
-              {/* <Link href="/terms" className="text-sm hover:text-blue-400">
-                利用規約
-              </Link> */}
               <Link href="/contact" className="text-sm hover:text-blue-400">
                 お問い合わせ
               </Link>
