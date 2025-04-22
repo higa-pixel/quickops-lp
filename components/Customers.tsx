@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 export default function Customers() {
     return (
       <section className="bg-gray-50 py-24">
