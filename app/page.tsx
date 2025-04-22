@@ -6,7 +6,7 @@ import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
 import UseCases from "@/components/use-cases"
-import Customers from "@/components/Customers"
+// import Customers from "@/components/Customers"
 import Timeline from "@/components/timeline"
 import Pricing from "@/components/pricing"
 import FAQ from "@/components/faq"
@@ -21,7 +21,7 @@ export default function Home() {
         <Hero />
         <Features />
         <UseCases />
-        <Customers />
+        {/* <Customers /> */}
         <Timeline />
         <Pricing />
         <FAQ />
