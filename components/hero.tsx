@@ -7,10 +7,11 @@ export default function Hero() {
     <section className="bg-white py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-7xl">
-            <span className="text-blue-600">AI</span>で業務を<span className="text-blue-600">"仕組み化"</span>して、
-            <br />3営業日で自動化。
-          </h1>
+        <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-7xl" style={{ wordBreak: 'keep-all' }}>
+          <span className="text-blue-600">AI</span>で業務を<span className="text-blue-600">"仕組み化"</span>
+          <br />
+          最短3営業日で自動化。
+        </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             QuickOpsはAI×ノーコードで、日常業務を最短3営業日で自動化します。
           </p>
