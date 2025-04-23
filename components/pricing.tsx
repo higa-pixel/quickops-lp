@@ -39,7 +39,7 @@ const plans = [
     description: "AI応用導入や全社DXを進めたい企業向け",
     features: [
       "複合的な業務プロセス自動化",
-      "ChatGPT・生成AIの応用構築",
+      "ChatGPT・生成AIの応用構築（Dify, LangChain）",
       "経営層や社員向けのAI・ITリテラシー研修",
       "社内ポータル・ナレッジ基盤の開発支援",
     ],
