@@ -13,7 +13,7 @@ export default function Hero() {
           最短3営業日で自動化。
         </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            QuickOpsはAI×ノーコードで、日常業務を最短3営業日で自動化します。
+            QuickOps（クイックオプス）はChatGPTなどのAI×ノーコードをベースに、日常業務を最短3営業日で自動化します。
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <Link href="/contact" className="w-full sm:w-auto">

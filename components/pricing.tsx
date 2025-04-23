@@ -92,13 +92,13 @@ export default function Pricing() {
                 </ul>
                 
                 {plan.specialOffer && (
-                  <div className="mt-5 mb-5 p-3 bg-blue-50 rounded-md border border-blue-100">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0 text-blue-600">
-                        <Lightbulb className="h-5 w-5" />
+                  <div className="mt-5 mb-5 p-4 bg-blue-100 rounded-md border-l-4 border-blue-500">
+                    <div className="flex items-center justify-center">
+                      <div className="flex-shrink-0 text-blue-600 mr-2">
+                        <Lightbulb className="h-6 w-6" />
                       </div>
-                      <p className="ml-2 text-sm font-bold text-blue-600">
-                        ✅【期間限定特典】{plan.specialOffer}
+                      <p className="text-lg font-bold text-blue-800">
+                        <span className="font-extrabold">【期間限定特典】</span> {plan.specialOffer}
                       </p>
                     </div>
                   </div>
