@@ -1,3 +1,5 @@
+"use client"
+
 import { CheckCircle2 } from "lucide-react"
 
 const steps = [
@@ -23,24 +25,23 @@ const steps = [
   },
 ]
 
-export default function Steps() {
+export default function Timeline() {
   return (
-    <section id="steps" className="bg-white py-24">
+    <section id="timeline" className="bg-gray-50 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">サービス導入の流れ</h2>
           <p className="mt-4 text-lg text-gray-600">QuickOpsの導入プロセスはシンプルで迅速です</p>
         </div>
         <div className="mt-16 mx-auto max-w-4xl">
-          <div className="relative">
-            {/* 縦線 */}
-            <div className="absolute left-4 top-0 h-full w-0.5 bg-blue-200 md:left-1/2 md:-ml-0.5"></div>
-
+          {/* デスクトップ用タイムライン */}
+          <div className="relative hidden md:block">
+            <div className="absolute left-1/2 top-0 h-full w-0.5 -ml-0.5 bg-blue-200"></div>
             <div className="space-y-12">
               {steps.map((step, index) => (
-                <div key={step.day} className="relative">
-                  <div className="md:flex md:items-center md:justify-between">
-                    <div className="md:w-1/2 md:pr-8 md:text-right">
+                <div key={`desktop-${step.day}`} className="relative">
+                  <div className="flex items-center justify-between">
+                    <div className="w-1/2 pr-12 text-right">
                       {index % 2 === 0 ? (
                         <>
                           <div className="mb-2 text-sm font-semibold text-blue-600">{step.day}</div>
@@ -48,15 +49,15 @@ export default function Steps() {
                           <p className="mt-2 text-gray-600">{step.description}</p>
                         </>
                       ) : (
-                        <div className="hidden md:block" />
+                        <div />
                       )}
                     </div>
 
-                    <div className="absolute left-0 top-1/2 -mt-3 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white md:left-1/2 md:-ml-4">
+                    <div className="absolute left-1/2 top-1/2 -mt-3 -ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white">
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
 
-                    <div className="md:w-1/2 md:pl-8">
+                    <div className="w-1/2 pl-12">
                       {index % 2 === 1 ? (
                         <>
                           <div className="mb-2 text-sm font-semibold text-blue-600">{step.day}</div>
@@ -64,23 +65,33 @@ export default function Steps() {
                           <p className="mt-2 text-gray-600">{step.description}</p>
                         </>
                       ) : (
-                        <div className="hidden md:block" />
+                        <div />
                       )}
                     </div>
                   </div>
-
-                  {/* モバイル表示用 */}
-                  <div className="mt-3 ml-12 md:hidden">
-                    {index % 2 === 1 && (
-                      <>
-                        <div className="mb-2 text-sm font-semibold text-blue-600">{step.day}</div>
-                        <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
-                        <p className="mt-2 text-gray-600">{step.description}</p>
-                      </>
-                    )}
-                  </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* モバイル用タイムライン - シンプルな縦並び */}
+          <div className="md:hidden">
+            <div className="relative">
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-blue-200"></div>
+              <div className="space-y-12">
+                {steps.map((step) => (
+                  <div key={`mobile-${step.day}`} className="relative">
+                    <div className="absolute left-0 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </div>
+                    <div className="ml-16">
+                      <div className="mb-2 text-sm font-semibold text-blue-600">{step.day}</div>
+                      <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+                      <p className="mt-2 text-gray-600">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
