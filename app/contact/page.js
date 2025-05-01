@@ -163,8 +163,8 @@ export default function ContactForm() {
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">選択してください</option>
-            <option value="service">サービスについて</option>
-            <option value="price">料金について</option>
+            <option value="freeconsultation">無料相談について</option>
+            <option value="service-price">サービス・料金について</option>
             <option value="document">資料請求</option>
             <option value="other">その他</option>
           </select>
