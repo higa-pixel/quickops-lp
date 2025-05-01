@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { Check, Lightbulb } from "lucide-react"
+import { Check, Lightbulb, Calculator } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -10,6 +10,7 @@ const plans = [
   {
     name: "スタータープラン",
     price: "¥1万円",
+    period: "／月",
     description: "「何から始めるか分からない」企業向け",
     features: [
       "月1回の面談 または 社内勉強会",
@@ -17,12 +18,14 @@ const plans = [
       "まず相談してみたい方にぴったり",
     ],
     specialOffer: "1業務の自動化付き",
+    taxAccountantFeature: "税理士と同じ感覚で使える！",
     cta: "無料相談を予約",
     popular: false,
   },
   {
     name: "スタンダードプラン",
     price: "¥5万円",
+    period: "／月",
     description: "仕組み化を継続したい中小企業向け",
     features: [
       "月2回の面談 または 社内勉強会",
@@ -36,10 +39,11 @@ const plans = [
   {
     name: "カスタム",
     price: "応相談",
+    period: "",
     description: "AI応用導入や全社DXを進めたい企業向け",
     features: [
       "複合的な業務プロセス自動化",
-      "ChatGPT・生成AIの応用構築（Dify, LangChain）",
+      "ChatGPT・生成AIの応用構築（Dify, LangChain, Python, GAS）",
       "経営層や社員向けのAI・ITリテラシー研修",
       "社内ポータル・ナレッジ基盤の開発支援",
     ],
@@ -73,13 +77,26 @@ export default function Pricing() {
                 <CardTitle className="text-xl">{plan.name}</CardTitle>
                 <div className="mt-4 flex items-baseline">
                   <span className="text-3xl font-bold">
-                  {plan.price}／月
-                  <span className="text-sm">（税込）</span>
+                  {plan.price}{plan.period}
+                  {plan.period && <span className="text-sm">（税込）</span>}
                   </span>
                 </div>
                 <CardDescription className="mt-1">{plan.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
+                {plan.taxAccountantFeature && (
+                  <div className="mb-5 p-3 bg-green-100 rounded-md border-l-4 border-green-500">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 text-green-600 mr-2">
+                        <Calculator className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm font-bold text-green-800">
+                        {plan.taxAccountantFeature}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start">
@@ -120,11 +137,6 @@ export default function Pricing() {
             </Card>
           ))}
         </div>
-        {/* <div className="mt-12 text-center">
-          <p className="text-gray-600">
-            すべてのプランには初期設定費用が含まれています。カスタムプランについてはお問い合わせください。
-          </p>
-        </div> */}
       </div>
     </section>
   )
