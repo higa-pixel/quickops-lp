@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { Check, Lightbulb, Calculator } from "lucide-react"
+import { Check, Lightbulb, Calculator, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -59,6 +59,10 @@ export default function Pricing() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">シンプルな料金体系</h2>
           <p className="mt-4 text-lg text-gray-600">ビジネスの規模や自動化したい業務に合わせて選べる料金プラン</p>
+          <div className="mt-2 text-sm text-blue-600 font-medium flex items-center justify-center">
+            <Info className="h-4 w-4 mr-1" />
+            <span>β版につき今後料金体系は変更の可能性があります</span>
+          </div>
         </div>
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
