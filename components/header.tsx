@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Header() {
@@ -40,6 +40,13 @@ export default function Header() {
           <Link href="#faq" className="text-sm font-medium text-gray-600 hover:text-blue-600">
             よくある質問
           </Link>
+          
+          {/* 電話番号表示 */}
+          <a href="tel:050-1725-1867" className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800">
+            <Phone className="h-4 w-4 mr-1" />
+            <span>050-1725-1867</span>
+          </a>
+          
           <Link href="/downloads/quickops-guide.pdf">
             <Button size="sm" variant="outline" className="ml-4">
               資料ダウンロード
@@ -52,6 +59,12 @@ export default function Header() {
 
         {/* モバイルメニューボタン */}
         <div className="flex md:hidden">
+          {/* モバイル用電話番号 */}
+          <a href="tel:050-1725-1867" className="flex items-center mr-4 text-sm font-medium text-blue-600">
+            <Phone className="h-4 w-4 mr-1" />
+            <span>050-1725-1867</span>
+          </a>
+          
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"

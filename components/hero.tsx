@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -29,6 +29,18 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+          
+          {/* 電話番号の表示 */}
+          <div className="mt-6 sm:mt-8">
+            <a href="tel:050-1725-1867" className="inline-flex items-center justify-center">
+              <div className="flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors">
+                <Phone className="h-8 w-8 mr-2" />
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold">050-1725-1867</span>
+              </div>
+            </a>
+            <p className="mt-2 text-sm text-gray-500">お電話でのお問い合わせも受け付けております</p>
+          </div>
+          
           {/*
             <div className="mt-8 sm:mt-12 flex items-center justify-center">
               <div className="rounded-full bg-blue-50 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-blue-700">
