@@ -2,10 +2,8 @@
 
 import { CheckCircle2 } from "lucide-react"
 
-/* ▼ 4 ステップに整理。Step-3 で
-      ── A: 自走サポート（スターター／スタンダード）
-      ── B: 開発代行（カスタム）
-   の “分岐” を明示します。*/
+/* 4 ステップ構成。
+   Step‑3 で A: 自走サポート ／ B: 開発代行 の分岐を明示 */
 const steps = [
   {
     day: "Step 1",
@@ -15,15 +13,15 @@ const steps = [
   {
     day: "Step 2",
     title: "ミニ診断 & ルート選択",
-    description: "自走サポート(A) or 開発代行(B) の最適ルートを決定。",
+    description: "自走サポート(A) または 開発代行(B) の最適ルートを決定。",
   },
   {
-    day: "Step 3-A",
+    day: "Step 3‑A",
     title: "自走セットアップ支援",
     description: "ガイド資料とハンズオンで、お客様が初期設定を完了。",
   },
   {
-    day: "Step 3-B",
+    day: "Step 3‑B",
     title: "詳細設計 & 見積り",
     description: "QuickOps が設計書と見積りを提示し、開発を開始。",
   },
@@ -43,34 +41,36 @@ export default function Timeline() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             サービス導入の流れ
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            4 ステップ、最短 2 週間で運用開始
-          </p>
+          <p className="mt-4 text-lg text-gray-600">4 ステップ、最短 2 週間で運用開始</p>
         </div>
 
-        {/* タイムライン（共通 + モバイル） */}
-        <div className="mt-16 mx-auto max-w-4xl relative">
-          <div className="absolute left-4 md:left-1/2 md:-ml-0.5 top-0 h-full w-0.5 bg-blue-200" />
-          <div className="space-y-12">
+        {/* タイムライン */}
+        <div className="relative mx-auto mt-16 max-w-4xl">
+          {/* 縦ライン */}
+          <div className="absolute left-6 top-0 h-full w-0.5 bg-blue-200 md:left-1/2 md:-ml-0.5" />
+
+          <div className="space-y-16">
             {steps.map((step, idx) => (
               <div key={step.day} className="relative">
-                {/* ライン上のアイコン */}
-                <div className="absolute left-0 md:left-1/2 top-1/2 -mt-3 flex h-8 w-8 items-center
-                                justify-center rounded-full bg-blue-600 text-white md:-ml-4">
+                {/* アイコン */}
+                <div className="absolute left-2 top-1/2 -mt-3 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white md:left-1/2 md:-ml-4">
                   <CheckCircle2 className="h-5 w-5" />
                 </div>
 
                 {/* カード (PC 交互 / SP 縦並び) */}
                 <div className="md:flex md:items-center md:justify-between">
-                  {/* 左コラム */}
-                  <div className={`md:w-1/2 md:pr-8 md:text-right ${idx % 2 ? "md:order-2" : ""}`}>
-                    <div className="mb-2 text-sm font-semibold text-blue-600">
-                      {step.day}
-                    </div>
+                  {/* 左カラム (モバイルは ml-20 でアイコンとラインを避ける) */}
+                  <div
+                    className={`ml-20 md:ml-0 md:w-1/2 md:pr-8 md:text-right ${
+                      idx % 2 ? "md:order-2" : ""
+                    }`}
+                  >
+                    <div className="mb-2 text-sm font-semibold text-blue-600">{step.day}</div>
                     <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
                     <p className="mt-2 text-gray-600">{step.description}</p>
                   </div>
-                  {/* 右コラム (ダミー) */}
+
+                  {/* 右側ダミー枠 (PC のみ) */}
                   <div className="hidden md:block md:w-1/2" />
                 </div>
               </div>
