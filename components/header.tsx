@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, Phone } from "lucide-react"
@@ -8,9 +9,19 @@ import { Button } from "@/components/ui/button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const router   = useRouter()
 
-  /* 便利関数：共通で使う内部リンク（トップ + #hash） */
-  const hashLink = (hash: string) => ({ pathname: "/", hash })
+  /* -------- 共通：セクションへスクロール or 遷移 -------- */
+  const goHash = (hash: string) => {
+    if (pathname === "/") {
+      // 同一ページならスムーススクロール
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" })
+    } else {
+      // 他ページならトップへ遷移してハッシュへ
+      router.push(`/#${hash}`)
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-sm">
@@ -20,23 +31,23 @@ export default function Header() {
           <Image src="/placeholder-logo.png" alt="QuickOps" width={120} height={40} />
         </Link>
 
-        {/* デスクトップナビ */}
+        {/* ───────── デスクトップナビ ───────── */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href={hashLink("features")} className="text-sm font-medium text-gray-600 hover:text-blue-600">
-            特徴
-          </Link>
-          <Link href={hashLink("use-cases")} className="text-sm font-medium text-gray-600 hover:text-blue-600">
-            活用例
-          </Link>
-          <Link href={hashLink("timeline")} className="text-sm font-medium text-gray-600 hover:text-blue-600">
-            導入の流れ
-          </Link>
-          <Link href={hashLink("pricing")} className="text-sm font-medium text-gray-600 hover:text-blue-600">
-            料金
-          </Link>
-          <Link href={hashLink("faq")} className="text-sm font-medium text-gray-600 hover:text-blue-600">
-            よくある質問
-          </Link>
+          {[
+            { label: "特徴", id: "features" },
+            { label: "活用例", id: "use-cases" },
+            { label: "導入の流れ", id: "timeline" },
+            { label: "料金", id: "pricing" },
+            { label: "よくある質問", id: "faq" },
+          ].map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => goHash(id)}
+              className="text-sm font-medium text-gray-600 hover:text-blue-600"
+            >
+              {label}
+            </button>
+          ))}
 
           {/* 電話番号 */}
           <a href="tel:050-1725-1867" className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800">
@@ -45,16 +56,14 @@ export default function Header() {
           </a>
 
           <Link href="/downloads/quickops-guide.pdf">
-            <Button size="sm" variant="outline" className="ml-4">
-              資料ダウンロード
-            </Button>
+            <Button size="sm" variant="outline" className="ml-4">資料ダウンロード</Button>
           </Link>
           <Link href="/contact">
             <Button size="sm">無料相談を予約</Button>
           </Link>
         </nav>
 
-        {/* モバイル：電話 & ハンバーガー */}
+        {/* ───────── モバイル：電話 & ハンバーガー ───────── */}
         <div className="flex md:hidden">
           <a href="tel:050-1725-1867" className="flex items-center mr-4 text-sm font-medium text-blue-600">
             <Phone className="h-4 w-4 mr-1" />
@@ -71,30 +80,28 @@ export default function Header() {
         </div>
       </div>
 
-      {/* モバイルメニュー */}
+      {/* ───────── モバイルメニュー ───────── */}
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="space-y-1 px-4 pb-3 pt-2 sm:px-6">
-            <Link href={hashLink("features")} onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-gray-600 hover:text-blue-600">
-              特徴
-            </Link>
-            <Link href={hashLink("use-cases")} onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-gray-600 hover:text-blue-600">
-              活用例
-            </Link>
-            <Link href={hashLink("timeline")} onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-gray-600 hover:text-blue-600">
-              導入の流れ
-            </Link>
-            <Link href={hashLink("pricing")} onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-gray-600 hover:text-blue-600">
-              料金
-            </Link>
-            <Link href={hashLink("faq")} onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-gray-600 hover:text-blue-600">
-              よくある質問
-            </Link>
+            {[
+              { label: "特徴", id: "features" },
+              { label: "活用例", id: "use-cases" },
+              { label: "導入の流れ", id: "timeline" },
+              { label: "料金", id: "pricing" },
+              { label: "よくある質問", id: "faq" },
+            ].map(({ label, id }) => (
+              <button
+                key={id}
+                onClick={() => {
+                  goHash(id)
+                  setIsMenuOpen(false)
+                }}
+                className="block w-full py-2 text-left text-base font-medium text-gray-600 hover:text-blue-600"
+              >
+                {label}
+              </button>
+            ))}
 
             <div className="mt-4 flex flex-col space-y-2">
               <Link href="/downloads/quickops-guide.pdf" className="w-full">

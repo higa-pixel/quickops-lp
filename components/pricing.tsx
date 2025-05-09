@@ -41,7 +41,7 @@ const plans = [
   // 3) カスタム ─ 専用システム開発を丸投げ
   {
     name: "カスタムプラン",
-    price: "¥50万〜",
+    price: "応相談（¥50万程度〜）",
     period: "", // 一括／分割可
     description: "要件定義～開発まで QuickOps が代行",
     features: [
