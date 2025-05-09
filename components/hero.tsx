@@ -9,12 +9,12 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center px-2 sm:px-0">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl" style={{ wordBreak: 'keep-all', lineHeight: '1.2' }}>
-            <span className="text-blue-600">AI</span>で業務を<span className="text-blue-600">"仕組み化"</span>
+            <span className="text-blue-600">AI</span>で業務を<span className="text-blue-600">"自動化"</span>
             <br />
-            最短3営業日で自動化。
+            小さく試して、確実に自動化。
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-gray-600">
-            QuickOps（クイックオプス）はChatGPTなどのAI×ノーコードをベースに、日常業務を最短3営業日で自動化します。
+            QuickOps（クイックオプス）はChatGPTなどのAI×ノーコードをベースに、まず1業務から試験運用し、効果を見ながら拡張できます。
           </p>
           <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:gap-6 sm:flex-row">
             <Link href="/contact" className="w-full sm:w-auto">

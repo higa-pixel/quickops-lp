@@ -5,7 +5,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "QuickOps",
-  description: "AIとノーコードで日常業務を最短3営業日で自動化するサービス",
+  description: "AIで業務をかんたん自動化、まずは1業務から。",
   generator: "QuickOps",
 };
 

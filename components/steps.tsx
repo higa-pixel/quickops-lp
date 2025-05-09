@@ -3,27 +3,32 @@
 import { CheckCircle2 } from "lucide-react"
 
 const steps = [
-  {
-    day: "Step 1",
-    title: "無料相談",
-    description: "お客様の課題や自動化したい業務についてヒアリングします。オンラインで30分程度の気軽な相談から始めましょう。",
-  },
-  {
-    day: "Step 2",
-    title: "プラン選定",
-    description: "ヒアリング内容をもとに、最適なプランをご提案します。目的や予算に合わせてカスタマイズすることも可能です。",
-  },
-  {
-    day: "Step 3",
-    title: "契約・初期設定",
-    description: "ご契約後、すぐに初期設定を行います。アカウント発行やツール連携など、専任スタッフがサポートします。",
-  },
-  {
-    day: "Step 4",
-    title: "サービス開始",
-    description: "定期的な面談やチャットサポートを通じて、継続的に業務改善を進めていきます。毎月の自動化で業務効率化を実現します。",
-  },
-]
+  // 共通
+  { day: "Step 1", title: "無料相談",
+    description: "課題とゴールを共有します。" },
+
+  { day: "Step 2", title: "ミニ診断 & 目標設定",
+    description: "自走か開発代行か、最適ルートを決定します。" },
+
+  // Aルート: サポート型
+  { day: "Step 3A", title: "自走セットアップ支援",
+    description: "ガイド資料とアドバイスで、お客様自身が初期設定を行います。" },
+
+  { day: "Step 4A", title: "伴走サポート開始",
+    description: "月次面談とチャット相談で運用を継続フォローします。" },
+
+  // Bルート: 導入代行型
+  { day: "Step 3B", title: "詳細設計 & 見積り",
+    description: "QuickOps が設計書と見積りを提示します。" },
+
+  { day: "Step 4B", title: "システム開発 & 導入",
+    description: "開発・テスト・納品までワンストップで実施します。" },
+
+  // 共通ゴール
+  { day: "Step 5", title: "継続改善",
+    description: "運用データを基に、追加自動化や改修を提案します。" },
+];
+
 
 export default function Timeline() {
   return (
